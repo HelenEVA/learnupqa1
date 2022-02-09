@@ -1,34 +1,32 @@
 public class Main {
 
     public static void main(String[] args) {
-        boolean isGreenLight = false;
-
-        int speedOfPlayer1 = 5;
-        int speedOfPlayer2 = 0;
-        int speedOfPlayer3 = 3;
-
-        int retired = 0;
 
 
-        if (isGreenLight) { //если зеленый
-            System.out.println("все проходят");
-        } else { //если не зеленый
-            if (speedOfPlayer1 > 0)
-                retired = retired + 1;
+        int[]speeds = new int[3];
+        speeds[0] = 1;
+        speeds[1] = 0;
+        speeds[2] = 3;
 
-            if (speedOfPlayer2 > 0)
-                retired = retired + 1;
+        Ex17.printDelim();
+        System.out.println("Количество выбывших");
+        int amountRetired = Ex17.amountRetired(speeds);
+        System.out.println(amountRetired);
 
-            if (speedOfPlayer3 > 0)
-                retired = retired + 1;
-
+        Ex17.printDelim();
+        System.out.println("Массив из скоростей выбывших");
+        int[]ArrayRetired = Ex17.ArrayRetired(speeds);
+        for (int i = 0; i < ArrayRetired.length; i++) {
+                System.out.println(ArrayRetired[i]);
         }
 
-        System.out.println("Выбыло игроков: " + retired);
-        // Допишите здесь логику так, что будет подсчитано и выведено
-        // количество игроков, которые выбывают.
-        // Если свет зелёный, то проходят все игроки (0 выбывают).
-        // Если свет красный, то выбывает каждый, чья скорость не 0.
+        Ex17.printDelim();
+        System.out.println("Массив из скоростей не выбывших");
+        int[]ArrayNotRetired = Ex17.ArrayNotRetired(speeds);
+        for (int i = 0; i < ArrayNotRetired.length; i++) {
+            System.out.println(ArrayNotRetired[i]);
+        }
+
     }
 
 }
